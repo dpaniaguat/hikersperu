@@ -1,0 +1,89 @@
+@import './base/settings';
+@import './base/base';
+
+$height-header--desktop : 111px;
+$height-footer--desktop : auto;
+$height-footer--devices : 100%;
+
+.cinta {
+    grid-area       : cinta;
+    background-color: rgb(87, 87, 87);
+}
+
+.header {
+    grid-area       : header;
+    background-color: #85aedd;
+    padding             : 30px;
+}
+
+.user_session {
+    grid-area: user_session;
+}
+
+.navbar {
+    grid-area       : navbar;
+    // background-color: #afd6af;
+}
+
+.search {
+    grid-area       : search;
+    // background-color: orange;
+}
+
+.sidebar {
+    grid-area       : sidebar;
+    background-color: #fdcfcf;
+}
+
+.main {
+    grid-area       : main;
+    background-color: #a09c1b;
+}
+
+.footer {
+    grid-area       : footer;
+}
+
+.app_wrapper {
+    height : 100%;
+    display: grid;
+    // gap    : 1px;
+    grid-template:
+        "cinta cinta"20px 
+        "header user_session"100px 
+        "search search"50px 
+        "navbar navbar"50px 
+        "main main"auto 
+        "sidebar sidebar"100px 
+        "footer footer"auto;
+}
+
+
+@media(min-width:600px) {
+    .app_wrapper {
+        grid-template:
+            "cinta cinta"20px 
+            "header user_session"100px /60px 
+            "search search"50px 
+            "navbar navbar"50px 
+            "sidebar main"auto 
+            "footer footer"auto / 
+            100px auto;
+    }
+}
+
+@media(min-width:900px) {
+    .app_wrapper {
+        grid-template:
+            "cinta cinta cinta cinta"20px 
+            "header navbar search user_session" 120px 
+            "main main main main"auto 
+            "sidebar sidebar sidebar sidebar"100px 
+            "footer footer footer footer"auto /
+            180px auto;
+    }
+    .header{
+        margin-left: 20px;
+        padding             : 0px;
+    }
+}

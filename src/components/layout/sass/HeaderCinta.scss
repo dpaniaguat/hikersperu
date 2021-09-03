@@ -1,0 +1,14 @@
+
+.cinta{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items    : center;
+    
+    &>span{
+        color: white;
+        border-right: 1px solid white;
+        padding-right: 10px;
+        font-size: 10px;
+    }
+}

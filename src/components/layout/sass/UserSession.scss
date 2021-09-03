@@ -1,0 +1,29 @@
+.user_session {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    &>span {
+        color: rgb(143, 142, 142);
+    }
+
+    &__info {
+
+        width: 40px;
+
+        span {
+            font-size: 13px;
+            ;
+        }
+    }
+
+    &__cart {
+        width        : 40px;
+        padding-left : 20px;
+        padding-right: 3px;
+
+        span {
+            font-size: 13px;
+        }
+    }
+}
