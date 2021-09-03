@@ -1,7 +1,10 @@
-export const Container = () => {
-    return (
-        <article className="main">
-            main
-        </article>
-    )
-}
+const Container = ({ children }) => {
+
+  return (
+    <div className="main">
+      {children}
+    </div>
+  );
+};
+
+export default Container;

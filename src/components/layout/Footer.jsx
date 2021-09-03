@@ -1,76 +1,25 @@
 import React from "react";
+import { footerData } from "../../utils/footerData";
 import "./sass/Footer.scss";
 
 export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer_elements">
-        <div className="footer__element">
-          <h3>Datos Del Contacto</h3>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
+        {footerData.map((item, i) => (
+          <div className="footer__element" key={i}>
+            <h3>{item.menu}</h3>
+            {item.items.map((option,j) => (
+              <ul className="footer__element--item" key={j}>
+                <i>{option.icono}</i>
+                <a href={option.href}>
+                  <span>{option.nombre}</span>
+                </a>
+              </ul>
+            ))}
           </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>hikersperu.travel@gmail.com</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>Lunes a Viernes (9:30 a 18:00) </span>
-          </div>
-          <div className="footer__element--item">
-            <span>Sábados (9:30 a 18:00)</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>Siguenos en:</span>
-          </div>
-        </div>
+        ))}
 
-        <div className="footer__element">
-          <h3>Atención al Cliente</h3>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-        </div>
-
-        <div className="footer__element">
-          <h3>Ayuda</h3>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-        </div>
-
-        <div className="footer__element">
-          <h3>Acerca de Nosotros</h3>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-          <div className="footer__element--item">
-            <i>I</i> <span>989 339 833</span>
-          </div>
-        </div>
         <div className="footer__element">
           <figure>
             <img

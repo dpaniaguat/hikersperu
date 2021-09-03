@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
  
-import HikersPeruApp from './HikersPeruApp';
+import {HikersPeruApp} from './HikersPeruApp';
 import './styles/styles.scss';
  
 

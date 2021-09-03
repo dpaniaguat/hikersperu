@@ -7,7 +7,7 @@ $height-footer--devices : 100%;
 
 .cinta {
     grid-area       : cinta;
-    background-color: rgb(87, 87, 87);
+    background-color: #474747;
 }
 
 .header {
@@ -33,11 +33,18 @@ $height-footer--devices : 100%;
 .sidebar {
     grid-area       : sidebar;
     background-color: #fdcfcf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main {
     grid-area       : main;
     background-color: #a09c1b;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 
 .footer {
@@ -75,7 +82,7 @@ $height-footer--devices : 100%;
 @media(min-width:900px) {
     .app_wrapper {
         grid-template:
-            "cinta cinta cinta cinta"20px 
+            "cinta cinta cinta cinta"30px 
             "header navbar search user_session" 120px 
             "main main main main"auto 
             "sidebar sidebar sidebar sidebar"100px 

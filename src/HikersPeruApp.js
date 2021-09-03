@@ -1,28 +1,26 @@
-import { Container } from "./components/layout/Container";
-import { Footer } from "./components/layout/Footer";
-import { Header } from "./components/layout/Header";
-import HeaderCinta from "./components/layout/HeaderCinta";
-import Layout from "./components/layout/Layout";
-import { Navbar } from "./components/layout/Navbar";
-import { Search } from "./components/layout/Search";
-import { Sidebar } from "./components/layout/Sidebar";
-import { UserSession } from "./components/layout/UserSession";
+import React, { useReducer, useEffect } from 'react';
+import { AppRouter } from './routes/AppRouter'
+import { AuthContext } from './auth/AuthContext';
+import { authReducer } from './auth/authReducer';
+import { RouteData } from './routes/RouteData';
 
+const init = () => {
+  return JSON.parse(localStorage.getItem('userAuth')) || { logged: false };
+}
 
-function HikersPeruApp() {
+export const HikersPeruApp = () => {
+
+  const [user, dispatch] = useReducer(authReducer, {}, init);
+
+  useEffect(() => {
+    localStorage.setItem('userAuth', JSON.stringify(user));
+  }, [user]);
+
   return (
-    <div className="app_wrapper">
-      <HeaderCinta />
-      <Header />
-      <UserSession/>
-      <Navbar />
-      <Search /> 
-      <Sidebar />
-      <Container />
-      <Footer />
+    <AuthContext.Provider value={{ user, dispatch, RouteData }} >
+      <AppRouter />
+    </AuthContext.Provider>
 
-    </div>
   );
 }
 
-export default HikersPeruApp;

@@ -1,33 +1,23 @@
-import './sass/Navbar.scss';
+import { RouteData } from "../../routes/RouteData";
+import "./sass/Navbar.scss";
+
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <nav className="navbar">
       <ul className="navbar__menu">
-        <li>
-          <a href="">Mejores Ofertas</a>
-          <span></span>
-        </li>
-        <li>
-          <a href="">Nuestros Tours</a>
-          <span></span>
-        </li>
-        <li>
-          <a href="">Experiencias</a>
-          <span></span>
-        </li>
-        <li>
-          <a href="">Blog</a>
-          <span></span>
-        </li>
-        <li>
-          <a href="">¿Quiénes Somos?</a>
-          <span></span>
-        </li>
-        <li>
-          <a href="">Contáctenos</a>
-          <span></span>
-        </li>
+        {RouteData.map(
+          ({ href, menu, privado }, i) =>
+            !privado && (
+              <li key={i}>
+                <Link exact to={href}>
+                  {menu}
+                </Link>
+                <span></span>
+              </li>
+            )
+        )}
       </ul>
     </nav>
   );
